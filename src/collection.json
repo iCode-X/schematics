@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "component": {
+      "factory": "./lib/component/component.factory#main",
+      "description": "Create a iMean component.",
+      "schema": "./lib/component/schema.json",
+      "aliases": ["s"]
+    }
+  }
+}

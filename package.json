@@ -1,0 +1,34 @@
+{
+  "name": "@imean/schematics",
+  "version": "1.0.0",
+  "description": "iMean architecture element generation based on Nest schematics 🎬",
+  "main": "index.js",
+  "scripts": {
+    "postbuild": "npm run copy:collection && npm run copy:lib",
+    "build": "rm -rf dist && tsc --project tsconfig.lib.json",
+    "copy:collection": "cpx src/collection.json dist && cpx 'src/lib/**/schema.json' dist/lib",
+    "copy:lib": "cpx 'src/lib/**/{files,workspace}/**/*.*' dist/lib && cpx 'src/lib/**/{files,workspace}/**/.!(gitignore)' dist/lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "8.8.1",
+    "@typescript-eslint/parser": "8.8.1",
+    "cpx2": "^8.0.0",
+    "eslint": "9.12.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.31.0",
+    "json-schema-to-typescript": "^15.0.2",
+    "prettier": "3.3.3",
+    "prettier-plugin-organize-imports": "4.1.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^18.2.8",
+    "@angular-devkit/schematics": "^18.2.8",
+    "path": "^0.12.7"
+  },
+  "schematics": "./dist/collection.json"
+}

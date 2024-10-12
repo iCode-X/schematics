@@ -17,6 +17,7 @@ export function mergeSourceRoot<T extends { sourceRoot?: string; path?: string }
 
     options.path =
       options.path !== undefined ? join(normalize(defaultSourceRoot), options.path) : normalize(defaultSourceRoot);
+
     return host;
   };
 }

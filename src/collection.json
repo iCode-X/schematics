@@ -5,7 +5,7 @@
       "factory": "./lib/component/component.factory#main",
       "description": "Create a iMean component.",
       "schema": "./lib/component/schema.json",
-      "aliases": ["s"]
+      "aliases": ["cmp"]
     }
   }
 }

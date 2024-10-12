@@ -49,6 +49,7 @@ function transform(source: ComponentOptions): ComponentOptions {
   }
   const location: Location = new NameParser().parse(target);
   target.name = normalizeToKebabOrSnakeCase(location.name);
+  // TODO 转换为graphql-service 中 component 的路径， 根据target.type去拼接
   target.path = join(normalizeToKebabOrSnakeCase(location.path) as Path, target.name);
 
   return target;

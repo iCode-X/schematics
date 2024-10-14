@@ -29,9 +29,9 @@
     "type": {
       "type": "string",
       "description": "The type of the component.",
-      "enum": ["component", "executor", "transformer"]
+      "enum": ["executor", "transformer"]
     }
   },
-  "required": ["name"],
+  "required": ["name", "type"],
   "additionalProperties": false
 }

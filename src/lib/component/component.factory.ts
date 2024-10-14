@@ -49,8 +49,11 @@ function transform(source: ComponentOptions): ComponentOptions {
   }
   const location: Location = new NameParser().parse(target);
   target.name = normalizeToKebabOrSnakeCase(location.name);
-  // TODO 转换为graphql-service 中 component 的路径， 根据target.type去拼接
-  target.path = join(normalizeToKebabOrSnakeCase(location.path) as Path, target.name);
+  target.path = join(
+    normalizeToKebabOrSnakeCase(location.path) as Path,
+    'modules/workflow/sub-modules/component/instance',
+    `${target.type}s`,
+  );
 
   return target;
 }
@@ -68,6 +71,13 @@ function generate(options: ComponentOptions) {
       move(options.path!),
     ])(context);
 }
+
+/**
+ * TODO 添加声明到模块
+ * 1. src/modules/workflow/sub-modules/component/common/dto/component.builder.dto.ts
+ * 2. src/modules/workflow/sub-modules/component/common/dto/component.copilot.dto.ts
+ * 3. src/modules/workflow/sub-modules/component/common/enums/component.enum.ts
+ */
 
 // function addDeclarationToModule(options: ComponentOptions): Rule {
 //   return (tree: Tree) => {

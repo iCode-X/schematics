@@ -1,7 +1,7 @@
 {
-  "name": "@imean/schematics",
+  "name": "@icodex/schematics",
   "version": "1.0.0",
-  "description": "iMean architecture element generation based on Nest schematics 🎬",
+  "description": "iCodeX architecture element generation based on Nest schematics 🎬",
   "main": "index.js",
   "scripts": {
     "postbuild": "npm run copy:collection && npm run copy:lib",

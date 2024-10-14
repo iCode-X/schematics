@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "$id": "SchematicsIMeanComponent",
-  "title": "iMean Component Options Schema",
+  "$id": "SchematicsICodeXComponent",
+  "title": "iCodeX Component Options Schema",
   "type": "object",
   "properties": {
     "name": {
@@ -24,7 +24,7 @@
     },
     "sourceRoot": {
       "type": "string",
-      "description": "iMean service source root directory."
+      "description": "iCodeX service source root directory."
     },
     "type": {
       "type": "string",

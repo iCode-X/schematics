@@ -1,17 +1,50 @@
-.idea
-.vscode
-.nyc_output/
-coverage/
+# compiled output
+/dist
+/node_modules
+/build
+/documentation
+openapitools.json
 
-node_modules
-schematics/
-dist
+# Logs
+logs
+*.log*
 
-src/lib/**/*.js
-!src/lib/resource/*.d.ts
-!src/lib/**/files/**/*
-!src/lib/**/workspace/**/*
-src/utils/**/*.js
-src/utils/**/*.d.ts
-
+# OS
 .DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# temp directory
+.temp
+.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock

@@ -3,7 +3,7 @@
   "schematics": {
     "component": {
       "factory": "./lib/component/component.factory#main",
-      "description": "Create a iMean component.",
+      "description": "Create a iCodeX component.",
       "schema": "./lib/component/schema.json",
       "aliases": ["cmp"]
     }

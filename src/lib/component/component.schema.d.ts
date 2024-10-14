@@ -19,7 +19,7 @@ export interface ComponentOptions {
    */
   language?: string;
   /**
-   * iMean service source root directory.
+   * iCodeX service source root directory.
    */
   sourceRoot?: string;
   /**

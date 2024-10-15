@@ -1,34 +1,50 @@
-.idea/
-.circleci
-.github
-.gitignore
-.prettierrc
-.travis.yml
-Makefile
-node_modules/
+# compiled output
+/dist
+/node_modules
+/build
+/documentation
+openapitools.json
+
+# Logs
+logs
+*.log*
+
+# OS
 .DS_Store
-CONTRIBUTE.md
 
-# source
-**/*.ts
-*.ts
-/test
+# Tests
+/coverage
+/.nyc_output
 
-# definitions
-!**/*.d.ts
-!*.d.ts
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# configuration
-renovate.json
-gulpfile.js
-tsconfig.json
-tools
-/test/jest-config.json
-/.vscode
-.commitlintrc.json
-.eslintrc.js
-.eslintignore
-.release-it.json
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# sample
-/sample
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# temp directory
+.temp
+.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock

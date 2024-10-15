@@ -1,5 +1,5 @@
 {
-  "name": "@icodex/schematics",
+  "name": "@icode-x/schematics",
   "version": "1.0.0",
   "description": "iCodeX architecture element generation based on Nest schematics 🎬",
   "author": "Felix Lau",

@@ -17,6 +17,9 @@ import { normalizeToKebabOrSnakeCase } from '../../utils/formatting';
 import { Location, NameParser } from '../../utils/name.parser';
 import { mergeSourceRoot } from '../../utils/source-root.helpers';
 import { ComponentOptions } from './component.schema';
+import { updateBuilderDTOWithComponentName } from './utils/update-builder-dto';
+import { updateEnumWithComponentName } from './utils/update-component-enum';
+import { updateCopilotDTOWithComponentName } from './utils/update-copilot-dto';
 
 export function main(options: ComponentOptions): Rule {
   // 转换和规范化选项
@@ -30,7 +33,9 @@ export function main(options: ComponentOptions): Rule {
           // 根据模板生成服务文件
           mergeWith(generate(options)),
           // 添加声明到模块
-          // addDeclarationToModule(options),
+          updateEnumWithComponentName(options.name),
+          updateCopilotDTOWithComponentName(options.name),
+          updateBuilderDTOWithComponentName(options.name),
         ]),
       )(tree, context);
 
@@ -79,21 +84,22 @@ function generate(options: ComponentOptions) {
  * 3. src/modules/workflow/sub-modules/component/common/enums/component.enum.ts
  */
 
-// function addDeclarationToModule(options: ComponentOptions): Rule {
-//   return (tree: Tree) => {
-//     if (options.skipImport !== undefined && options.skipImport) {
-//       return tree;
-//     }
-//     options.module = new ModuleFinder(tree).find({
-//       name: options.name,
-//       path: options.path as Path,
-//     });
-//     if (!options.module) {
-//       return tree;
-//     }
-//     const content = tree.read(options.module).toString();
-//     const declarator: ModuleDeclarator = new ModuleDeclarator();
-//     tree.overwrite(options.module, declarator.declare(content, options as DeclarationOptions));
-//     return tree;
-//   };
-// }
+function addDeclarationToModule(options: ComponentOptions): Rule {
+  return (tree: Tree) => {
+    // updateEnumWithComponentName(options.name);
+    //     if (options.skipImport !== undefined && options.skipImport) {
+    //       return tree;
+    //     }
+    //     options.module = new ModuleFinder(tree).find({
+    //       name: options.name,
+    //       path: options.path as Path,
+    //     });
+    //     if (!options.module) {
+    //       return tree;
+    //     }
+    //     const content = tree.read(options.module).toString();
+    //     const declarator: ModuleDeclarator = new ModuleDeclarator();
+    //     tree.overwrite(options.module, declarator.declare(content, options as DeclarationOptions));
+    //     return tree;
+  };
+}

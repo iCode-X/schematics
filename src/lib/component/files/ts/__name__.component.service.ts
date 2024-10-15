@@ -1,6 +1,9 @@
-import { BuildComponent, ComponentType, ExecComponentOutputDTO, IMeanComponent } from '#component/common/index';
 import { Service } from 'typedi';
 import { ProcessBlockModel } from '../../../../../process/common/models/process-block.model';
+import { IMeanComponent } from '../../common/base.component';
+import { BuildComponent } from '../../common/dto/component.builder.dto';
+import { ExecComponentOutputDTO } from '../../common/dto/component.copilot.dto';
+import { ComponentType } from '../../common/enums/component.enum';
 
 @Service(ComponentType.<%= classify(name) %>)
 export class <%= classify(name) %>ComponentService extends IMeanComponent.Core {
@@ -10,11 +13,13 @@ export class <%= classify(name) %>ComponentService extends IMeanComponent.Core {
     throw new Error('Method not implemented.');
   }
 
-  execute(params: IMeanComponent.ExecuteParams): Promise<void> {
+  async execute(params: IMeanComponent.ExecuteParams): Promise<void> {
+     this.execResult.type = ComponentType.Test;
+
     throw new Error('Method not implemented.');
   }
 
-  final(params: IMeanComponent.ExecuteParams, result: ExecComponentOutputDTO): Promise<ExecComponentOutputDTO> {
+  async final(params: IMeanComponent.ExecuteParams, result: ExecComponentOutputDTO): Promise<ExecComponentOutputDTO> {
     throw new Error('Method not implemented.');
   }
 

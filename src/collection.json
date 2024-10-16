@@ -12,6 +12,12 @@
       "description": "Convert JSON schema to TypeScript interface.",
       "schema": "./lib/schema2ts/schema.json",
       "aliases": ["s2t"]
+    },
+    "openapi-gen": {
+      "factory": "./lib/openapi-gen/openapi-gen.factory#main",
+      "description": "Generate code from OpenAPI spec.",
+      "schema": "./lib/openapi-gen/schema.json",
+      "aliases": ["oag"]
     }
   }
 }

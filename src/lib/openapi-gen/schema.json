@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsICodeXOpenapi",
+  "title": "iCodeX OpenapiGen Options Schema",
+  "type": "object",
+  "properties": {
+    "sourceRoot": {
+      "type": "string",
+      "description": "iCodeX service source root directory."
+    },
+    "inputSpec": {
+      "type": "string",
+      "description": "The OpenAPI spec file path."
+    },
+    "outputDir": {
+      "type": "string",
+      "description": "The output directory for generated files."
+    },
+    "generator": {
+      "type": "string",
+      "description": "The generator to use.",
+      "enum": ["typescript-fetch", "typescript-deno"]
+    }
+  },
+  "required": ["inputSpec", "outputDir", "generator"],
+  "additionalProperties": false
+}

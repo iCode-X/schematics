@@ -1,20 +1,22 @@
 {
   "name": "@icode-x/schematics",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "iCodeX architecture element generation based on Nest schematics 🎬",
   "author": "Felix Lau",
   "main": "src/index.ts",
   "scripts": {
-    "postbuild": "npm run copy:collection && npm run copy:lib",
+    "postbuild": "npm run copy:collection && npm run copy:lib && npm run coy:template",
     "build": "rm -rf dist && tsc --project tsconfig.lib.json",
     "copy:collection": "cpx src/collection.json dist && cpx 'src/lib/**/schema.json' dist/lib",
     "copy:lib": "cpx 'src/lib/**/{files,workspace}/**/*.*' dist/lib && cpx 'src/lib/**/{files,workspace}/**/.!(gitignore)' dist/lib",
+    "coy:template": "cpx 'src/lib/**/templates/**/*.*' dist/lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "ISC",
   "dependencies": {
     "@angular-devkit/core": "^18.2.8",
     "@angular-devkit/schematics": "^18.2.8",
+    "@openapitools/openapi-generator-cli": "^2.14.0",
     "path": "^0.12.7"
   },
   "devDependencies": {

@@ -6,6 +6,12 @@
       "description": "Create a iCodeX component.",
       "schema": "./lib/component/schema.json",
       "aliases": ["cmp"]
+    },
+    "schema2ts": {
+      "factory": "./lib/schema2ts/schema2ts.factory#main",
+      "description": "Convert JSON schema to TypeScript interface.",
+      "schema": "./lib/schema2ts/schema.json",
+      "aliases": ["s2t"]
     }
   }
 }

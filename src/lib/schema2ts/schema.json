@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsICodeXSchema2ts",
+  "title": "iCodeX Schema2ts Options Schema",
+  "type": "object",
+  "properties": {
+    "sourceRoot": {
+      "type": "string",
+      "description": "iCodeX service source root directory."
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

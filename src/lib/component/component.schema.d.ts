@@ -25,5 +25,5 @@ export interface ComponentOptions {
   /**
    * The type of the component.
    */
-  type: string;
+  type: "executor" | "transformer";
 }

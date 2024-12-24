@@ -1,6 +1,6 @@
 {
   "name": "@icode-x/schematics",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "iCodeX architecture element generation based on Nest schematics 🎬",
   "author": "Felix Lau",
   "main": "src/index.ts",
@@ -9,8 +9,7 @@
     "build": "rm -rf dist && tsc --project tsconfig.lib.json",
     "copy:collection": "cpx src/collection.json dist && cpx 'src/lib/**/schema.json' dist/lib",
     "copy:lib": "cpx 'src/lib/**/{files,workspace}/**/*.*' dist/lib && cpx 'src/lib/**/{files,workspace}/**/.!(gitignore)' dist/lib",
-    "coy:template": "cpx 'src/lib/**/templates/**/*.*' dist/lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "coy:template": "cpx 'src/lib/**/templates/**/*.*' dist/lib"
   },
   "license": "ISC",
   "dependencies": {

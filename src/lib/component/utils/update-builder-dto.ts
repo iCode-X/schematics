@@ -31,7 +31,7 @@ export function updateBuilderDTOWithComponentName(componentName: string): Rule {
     // Step 2: 插入新的 DTO class 到 `ExecResult` 之前
     const dtoClass = `@InputType('${classify(componentName)}MetadataInput')
   @ObjectType('${classify(componentName)}MetadataOutput', { implements: IMeanComponent.Content })
-  export class ${classify(componentName)}BuilderDTO  implements IMeanComponent.Content {
+  export class ${classify(componentName)}BuilderDTO implements IMeanComponent.Content {
     @Field(() => ComponentType)
     type!: ComponentType.${classify(componentName)};
   }
@@ -80,7 +80,7 @@ export function updateBuilderDTOWithComponentName(componentName: string): Rule {
 
       if (switchMatch) {
         const switchIndex = updatedSourceWithTypes.indexOf(switchMatch[0]) + switchMatch[0].length;
-        const newCase = `\n        case ComponentType.${classify(componentName)}:\n          return ${classify(componentName)}BuilderDTO ;`;
+        const newCase = `\n        case ComponentType.${classify(componentName)}:\n          return ${classify(componentName)}BuilderDTO;`;
 
         const updatedSourceWithSwitch = insertAtPosition(updatedSourceWithTypes, switchIndex, newCase);
 

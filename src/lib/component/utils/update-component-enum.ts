@@ -44,7 +44,7 @@ export function updateEnumWithComponentName(componentName: string): Rule {
 
       // 9. 将新的 componentName 添加到枚举中
       enumContent = `
-  ${enumContent.trim()}${lastCommaMatch}\n  ${classify(componentName)} = '${classify(componentName)},'`;
+  ${enumContent.trim()}${lastCommaMatch}\n  ${classify(componentName)} = '${classify(componentName)}',`;
 
       // 10. 使用正则表达式替换旧的 ComponentType 内容
       const updatedFileContent = fileContent.replace(enumRegex, `enum ComponentType {${enumContent}\n}`);

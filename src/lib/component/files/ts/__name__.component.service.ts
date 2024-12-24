@@ -14,7 +14,7 @@ export class <%= classify(name) %>ComponentService extends IMeanComponent.Core {
   }
 
   async execute(params: IMeanComponent.ExecuteParams): Promise<void> {
-     this.execResult.type = ComponentType.Test;
+    this.execResult.type = ComponentType.<%= classify(name) %>;
 
     throw new Error('Method not implemented.');
   }
